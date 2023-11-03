@@ -4,6 +4,7 @@ import { appsData, productsData } from './data.js';
 import Home from './pages/Home/Home';
 import ProductsPage from './pages/Products/ProductsPage';
 import ViewProductPage from './pages/ViewProduct/ViewProductPage';
+import EditProductPage from './pages/EditProduct/EditProduct.jsx';
 import './App.css'
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
          Route should be /products/:id/edit and it should use
          the EditProduct element
          */}
+        <Route path="/products/:id/:edit" element={<EditProductPage setProducts={setProducts} products={products}/>}/>
         <Route path="/products/:id" element={<ViewProductPage />} />
         <Route path="/products" element={<ProductsPage products={products} />}/>
         <Route path="/" element={<Home />} />
