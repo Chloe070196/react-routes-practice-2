@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function EditProductPage({setProducts, products}) {
+function EditProductPage({products, setProducts}) {
 
   const [productToUpdate, setProductToUpdate] = useState(null);
-
-  const location = useLocation
+  const location = useLocation()
+  
+  console.log(location)
 
   console.log({ productToUpdate });
 
-  useEffect(() => setProductToUpdate(location), [location])
+  useEffect(() => setProductToUpdate(location.state.product), [location])
 
   function handleChange(event) {
     const name = event.target.name;
